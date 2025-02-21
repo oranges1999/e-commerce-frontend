@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Figma design
+
+https://www.figma.com/design/qdDOV4xwaDWxkRXvNEO8zK/Full-E-Commerce-Website-UI-UX-Design-(Community)?node-id=810-9247&t=VOKYWPg14l9vCg6D-0
