@@ -64,7 +64,7 @@ const quickLinks = ref([
 </script>
 
 <template>
-  <header>
+  <header class="border-b-2 border-[#d3d3d3]">
     <div class="h-[48px] flex justify-center items-center bg-black">
       <p class="text-[14px] text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. <a class="underline !font-bold" href="">ShopNow</a>
@@ -86,13 +86,13 @@ const quickLinks = ref([
     </div>
   </header>
 
-  <div class="mx-auto px-4 w-full max-w-[1280px]">
+  <div class="mx-auto w-full max-w-[1280px]">
     <RouterView />
   </div>
 
   <footer>
     <div class="h-[440px] flex justify-center items-center bg-black">
-      <div class="mx-auto px-4 w-full max-w-[1280px] flex justify-between">
+      <div class="mx-auto w-full max-w-[1280px] flex justify-between">
         <div>
           <div class="text-white mb-[10px]">
             <p class="text-[24px] font-bold">Exclusive</p>
