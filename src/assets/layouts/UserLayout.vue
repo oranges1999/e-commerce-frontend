@@ -11,7 +11,7 @@ const navLinks = ref([
   },
   {
     title: 'Contact',
-    link:'/',
+    link:'/contact',
   },
   {
     title: 'About',
@@ -61,7 +61,7 @@ const quickLinks = ref([
   },
   {
     title: 'Contact',
-    link:'/',
+    link:'/contact',
   },
 ])
 </script>
