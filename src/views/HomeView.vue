@@ -1,6 +1,6 @@
 <script setup>
 import UserLayout from '@/assets/layouts/UserLayout.vue';
-import { ref, onMounted } from 'vue'
+import {  h, ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router';
 
 function scrollToTop() {
@@ -147,7 +147,7 @@ const slide = (direction) => {
   <UserLayout :login="queryParams.login">
     <!-- Category & Carousel -->
     <div>
-      <div class="flex justify-between w-full mb-[120px]">
+      <div class="flex justify-between w-full mb-[80px]">
         <div class="pt-[40px]">
           <div class="flex flex-col">
             <RouterLink v-for="link in category" class="w-[300px] flex justify-between items-center" :to="link.link">

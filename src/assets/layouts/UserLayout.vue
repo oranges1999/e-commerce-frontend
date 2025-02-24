@@ -1,8 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { ref } from 'vue'
+import { h, ref } from 'vue'
+import { ElNotification } from 'element-plus'
 
 const props=defineProps(['login'])
+if(props.login && props.login == 'true'){
+  ElNotification({
+    title: 'Login success',
+    message: h('i', { style: 'color: teal' }, 'You have logged in successfully'),
+  })
+}
 const navLinks = ref([
   {
     title: 'Home',
