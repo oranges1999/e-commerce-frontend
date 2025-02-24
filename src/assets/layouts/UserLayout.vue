@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import { ref } from 'vue'
 
 const props=defineProps(['login'])
-
 const navLinks = ref([
   {
     title: 'Home',

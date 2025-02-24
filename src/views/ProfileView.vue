@@ -2,7 +2,7 @@
     <UserLayout>
         <div class="flex justify-between my-[80px]">
             <div class="flex">
-                <p class="text-[14px] opacity-[50%]">Home</p>
+                <RouterLink to="/" class="text-[14px] opacity-[50%]">Home</RouterLink>
                 <p class="text-[14px] mx-[10px]">/</p>
                 <p class="text-[14px]">My Account</p>
             </div>
@@ -79,6 +79,11 @@ const form = ref({
     new_pass:'',
     confirm_pass:'',
 })
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+scrollToTop()
 </script>
 
 <style scoped>

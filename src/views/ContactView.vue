@@ -66,6 +66,11 @@
   import UserLayout from '@/assets/layouts/UserLayout.vue';
   import { ref } from 'vue'
   
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  scrollToTop()
+
   const form = ref({})
   </script>
   

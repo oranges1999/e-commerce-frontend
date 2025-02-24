@@ -3,6 +3,11 @@ import UserLayout from '@/assets/layouts/UserLayout.vue';
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router';
 
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+scrollToTop()
+
 const route = useRoute();
 const queryParams = route.query;
 const category = ref([
@@ -48,7 +53,7 @@ const flashSale = ref([
     discount: 50,
     rating: 5,
     reviews: 88,
-    link:'/'
+    link:'/product'
   },
   {
     id: 2,
@@ -59,7 +64,7 @@ const flashSale = ref([
     discount: 50,
     rating: 4,
     reviews: 75,
-    link:'/'
+    link:'/product'
   },
   {
     id: 3,
@@ -70,7 +75,7 @@ const flashSale = ref([
     discount: 50,
     rating: 5,
     reviews: 99,
-    link:'/'
+    link:'/product'
   },
   {
     id: 4,
@@ -81,7 +86,7 @@ const flashSale = ref([
     discount: 50,
     rating: 4,
     reviews: 99,
-    link:'/'
+    link:'/product'
   },
   {
     id: 5,
@@ -92,7 +97,7 @@ const flashSale = ref([
     discount: 50,
     rating: 5,
     reviews: 99,
-    link:'/'
+    link:'/product'
   }
 ])
 
@@ -530,6 +535,26 @@ const slide = (direction) => {
       </div>
     </div>
 
+    <div class="grid grid-cols-3 mb-[80px]">
+      <div class="flex flex-col justify-center items-center">
+        <img class="mb-[24px]" src="/src/assets/svg/delivery.svg" alt="">
+        <p class="font-bold text-[20px]">FREE AND FAST DELIVERY</p>
+        <p class="mt-[8px] text-[14px]">Free delivery for all orders over $140</p>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img class="mb-[24px]" src="/src/assets/svg/customer-service.svg" alt="">
+        <p class="font-bold text-[20px]">24/7 CUSTOMER SERVICE</p>
+        <p class="mt-[8px] text-[14px]">Friendly 24/7 customer support</p>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <img class="mb-[24px]" src="/src/assets/svg/after-service.svg" alt="">
+        <p class="font-bold text-[20px]">MONEY BACK GUARANTEE</p>
+        <p class="mt-[8px] text-[14px]">We return money within 30 days</p>
+      </div>
+    </div>
+    <div class="w-full flex justify-end mb-[80px]">
+      <img @click="scrollToTop()" class="cursor-pointer" src="/src/assets/svg/scroll-to-top.svg" alt="">
+    </div>
   </UserLayout>
 </template>
 

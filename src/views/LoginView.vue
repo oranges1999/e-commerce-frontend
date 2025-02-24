@@ -2,6 +2,11 @@
 import UserLayout from '@/assets/layouts/UserLayout.vue';
 import { ref, onMounted } from 'vue'
 
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+scrollToTop()
+
 const input2 = ref()
 const input3 = ref()
 </script>
