@@ -15,7 +15,7 @@ const navLinks = ref([
   },
   {
     title: 'About',
-    link:'/',
+    link:'/about',
   },
   {
     title: 'Sign up',
@@ -26,7 +26,7 @@ const navLinks = ref([
 const footerLinks = ref([
   {
     title: 'My Account',
-    link:'/',
+    link:'/profile',
   },
   {
     title: 'Login / Register',
@@ -105,7 +105,7 @@ const quickLinks = ref([
             <template #dropdown>
               <el-dropdown-menu class="!bg-[#F6F6F6]">
                 <el-dropdown-item>
-                  <RouterLink to="/" class="flex items-center">
+                  <RouterLink to="/profile" class="flex items-center">
                     <img class="w-[24px] h-[24px]" src="/src/assets/svg/profile.svg" alt="">
                     <p class="ml-[10px]">
                       Manage My Account
@@ -113,7 +113,7 @@ const quickLinks = ref([
                   </RouterLink>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <RouterLink to="/" class="flex items-center">
+                  <RouterLink to="/profile" class="flex items-center">
                     <img class="w-[24px] h-[24px]" src="/src/assets/svg/order.svg" alt="">
                     <p class="ml-[10px]">
                       My Order
@@ -121,7 +121,7 @@ const quickLinks = ref([
                   </RouterLink>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <RouterLink to="/" class="flex items-center">
+                  <RouterLink to="/profile" class="flex items-center">
                     <img class="w-[24px] h-[24px]" src="/src/assets/svg/close.svg" alt="">
                     <p class="ml-[10px]">
                       My Cancellations
@@ -129,7 +129,7 @@ const quickLinks = ref([
                   </RouterLink>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <RouterLink to="/" class="flex items-center">
+                  <RouterLink to="/profile" class="flex items-center">
                     <img class="w-[24px] h-[24px]" src="/src/assets/svg/star.svg" alt="">
                     <p class="ml-[10px]">
                       My Reviews
@@ -137,7 +137,7 @@ const quickLinks = ref([
                   </RouterLink>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <RouterLink to="/" class="flex items-center">
+                  <RouterLink to="/profile" class="flex items-center">
                     <img class="w-[24px] h-[24px]" src="/src/assets/svg/logout.svg" alt="">
                     <p class="ml-[10px]">
                       Logout

@@ -171,7 +171,7 @@ const slide = (direction) => {
       </div>
     </div>
 
-    <div class="border-b-2 border-[#d3d3d3] mb-[60px]">
+    <div class="mb-[60px]">
       <div class="flex items-center">
         <div class="w-[20px] h-[40px] bg-[#DB4444] rounded-[4px]"></div>
         <p class="text-[16px] font-bold text-[#DB4444] ml-[16px]">Featured</p>
