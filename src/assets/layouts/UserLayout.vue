@@ -94,18 +94,18 @@ const quickLinks = ref([
           <input class="w-[211px] h-[38px] " type="text" placeholder="What are you looking for?">
           <img class="absolute right-[20px] top-[10px] cursor-pointer" src="/src/assets/svg/magnifying-glass.svg" alt="">
         </div>
-        <div class="flex relative mx-[16px]">
+        <RouterLink class="flex relative mx-[16px]" to="/wishlist">
             <img class="cursor-pointer" style="max-width: fit-content; width: 32px !important;" src="/src/assets/svg/heart.svg" alt="">
             <div v-if="login && login == 'true'" class="absolute right-[-5px] w-[16px] h-[16px] bg-[#db4444] flex justify-center items-center rounded-[50%]">
                 <p class="text-[white] text-[12px] font-bold">4</p>
             </div>
-        </div>
-        <div class="flex relative"> 
+        </RouterLink>
+        <RouterLink class="flex relative" to="/cart"> 
             <img class=" cursor-pointer" style="max-width: fit-content; width: 32px !important;" src="/src/assets/svg/cart.svg" alt="">
             <div v-if="login && login == 'true'" class="absolute right-[-5px] w-[16px] h-[16px] bg-[#db4444] flex justify-center items-center rounded-[50%]">
                 <p class="text-[white] text-[12px] font-bold">4</p>
             </div>
-        </div>
+        </RouterLink>
         <template v-if="login && login == 'true'">
           <el-dropdown class="ml-[16px]" placement="bottom-end" trigger="click">
             <img style="width: 32px !important; max-width: fit-content;" class="cursor-pointer el-dropdown-link" src="/src/assets/svg/profile.svg" alt="">
@@ -144,7 +144,7 @@ const quickLinks = ref([
                   </RouterLink>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <RouterLink to="/profile" class="flex items-center">
+                  <RouterLink to="/?login=false" class="flex items-center">
                     <img class="w-[24px] h-[24px]" src="/src/assets/svg/logout.svg" alt="">
                     <p class="ml-[10px]">
                       Logout

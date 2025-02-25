@@ -61,7 +61,30 @@ const router = createRouter({
       name: 'notFound',
       component: () => import('../views/User/404View.vue'),
     },
-    // End 404
+    {
+      path: '/wishlist',
+      name: 'wishlist',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/WishListView.vue'),
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/CartView.vue'),
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/CheckoutView.vue'),
+    },
   ],
 })
 
