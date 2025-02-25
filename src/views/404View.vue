@@ -7,7 +7,7 @@
                 <p class="text-[14px]">404 Error</p>
             </div>    
         </div>
-        <div class="flex flex-col items-center mb-[80px]">
+        <div class="flex flex-col justify-center items-center mb-[80px]">
             <p class="text-[110px] font-medium">404 Not Found</p>
             <p class="text-[16px]">Your visited page not found. You may go home page.</p>
             <RouterLink class="mt-[96px]" to="/">

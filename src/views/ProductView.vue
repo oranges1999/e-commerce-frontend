@@ -9,14 +9,19 @@
                 <p class="text-[14px]">Fryer 2</p>
             </div>    
         </div>
-        <div class="flex grid grid-cols-10 gap-[30px]">
-            <div class="grid grid-flow-col grid-rows-4 gap-[16px]">
-                <div v-for="image, index in productInfo.image" :key="index" class="cursor-pointer" @click="setImage(index)">
-                    <img class="w-[100px] aspect-auto" :src="image.link" alt="">
+        <div class="grid max-lg:grid-cols-1 lg:grid-cols-10 lg:gap-[30px]">
+            <div class="col-span-6 grid max-lg:grid-cols-1 lg:grid-cols-6 lg:gap-[30px]">
+                <div class="lg:hidden col-span-5 flex items-center justify-center">
+                    <img :src="bigImage.link" alt="">
                 </div>
-            </div>
-            <div class="col-span-5 flex items-center justify-center">
-                <img :src="bigImage.link" alt="">
+                <div class="grid grid-flow-col lg:grid-rows-4 gap-[16px]">
+                    <div v-for="image, index in productInfo.image" :key="index" class="cursor-pointer flex items-center justify-center" @click="setImage(index)">
+                        <img class="w-[100px] aspect-auto" :src="image.link" alt="">
+                    </div>
+                </div>
+                <div class="lg:flex col-span-5 hidden items-center justify-center">
+                    <img :src="bigImage.link" alt="">
+                </div>
             </div>
             <div class="col-span-4">
                 <p class="text-[24px] font-bold">{{ productInfo.name }}</p>
@@ -49,7 +54,7 @@
                     <el-input-number size="large" class="" v-model="num" :min="1" :max="10" @change="handleChange" />
                     <div class="flex justify-center items-center ml-[20px]">
                         <button>
-                            <div class="px-[48px] py-[10px] flex justify-center items-center bg-[#DB4444] rounded-[4px] cursor-pointer"> 
+                            <div class="px-[20px] py-[10px] flex justify-center items-center bg-[#DB4444] rounded-[4px] cursor-pointer"> 
                                 <p class="text-[16px] text-white font-medium">Buy Now</p>
                             </div>
                         </button>
@@ -84,7 +89,7 @@
             </div>
             <div class="flex flex-col items-center mt-[40px]">
                 <div 
-                class="flex flex-wrap"
+                class="flex flex-wrap max-[960px]:justify-center"
                 :style="{ transform: `translateX(-${currentSlide * (100 / itemsToShow)}%)` }"
                 >
                 <div 

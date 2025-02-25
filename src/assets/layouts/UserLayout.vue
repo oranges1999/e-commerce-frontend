@@ -79,15 +79,19 @@ const quickLinks = ref([
         Lorem ipsum dolor sit amet consectetur adipisicing elit. <a class="underline !font-bold" href="">ShopNow</a>
       </p>
     </div>
-    <div class="container py-[40px] mx-auto w-full max-w-[1280px] flex justify-between items-center">
+  </header>
+
+  <div class="container sm:py-[40px] mx-auto w-full max-w-[1280px] flex flex-col justify-between items-center sm:flex-row">
       <RouterLink to="/">
         <h1 class="text-[24px] font-bold cursor-pointer">Exclusive</h1>
       </RouterLink>
-      <div class="w-[367px] flex justify-between">
-        <div v-for="link, index in navLinks">
+
+      <div class="w-[367px] flex justify-between my-[20px] sm:my-[0px]">
+        <template v-for="link, index in navLinks">
             <router-link v-if="!(link.title == 'Sign up' && login == 'true')" :to="link.link">{{ link.title }}</router-link>
-        </div>
+        </template>
       </div>
+
       <div class="flex w-[347px]">
         <div class="relative bg-[#F5F5F5] rounded-[4px] w-[283px] flex justify-center">
           <input class="w-[211px] h-[38px] " type="text" placeholder="What are you looking for?">
@@ -156,27 +160,28 @@ const quickLinks = ref([
         </template>
       </div>
     </div>
-  </header>
 
   <div class="mx-auto w-full max-w-[1280px]">
     <slot></slot>
   </div>
 
   <footer>
-    <div class="h-[440px] flex justify-center items-center bg-black">
-      <div class="mx-auto w-full max-w-[1280px] flex justify-between">
-        <div>
-          <div class="text-white mb-[10px]">
-            <p class="text-[24px] font-bold">Exclusive</p>
-            <p class="text-[20px] font-medium my-[24px]">Subcribe</p>
-            <p class="text-[16px]">Get 10% off your first order</p>
-          </div>
-          <div class="relative bg-[black] border border-white rounded-[4px] w-[217px]">
-            <input id="email" class="ml-[20px] w-[130px] h-[38px] " type="text" placeholder="Enter your email">
-            <img class="absolute right-[20px] top-[6px] cursor-pointer" src="/src/assets/svg/paper-plane.svg" alt="">
+    <div class=" flex justify-center items-center bg-black">
+      <div class="my-[30px] mx-auto w-full max-w-[1280px] grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2 md:grid-cols-4">
+        <div class="mx-[20px] md:flex md:justify-center">
+          <div>
+            <div class="text-white mb-[10px]">
+              <p class="text-[24px] font-bold">Exclusive</p>
+              <p class="text-[20px] font-medium my-[24px]">Subcribe</p>
+              <p class="text-[16px]">Get 10% off your first order</p>
+            </div>
+            <div class="relative bg-[black] border border-white rounded-[4px] w-[217px]">
+              <input id="email" class="ml-[20px] w-[130px] h-[38px] " type="text" placeholder="Enter your email">
+              <img class="absolute right-[20px] top-[6px] cursor-pointer" src="/src/assets/svg/paper-plane.svg" alt="">
+            </div>
           </div>
         </div>
-        <div>
+        <div class="mx-[20px] md:flex md:justify-center">
           <div class="text-white mb-[10px]">
             <p class="text-[24px] font-bold">Support</p>
             <p class="text-[16px] mt-[20px]">Hoang Mai, Ha Noi</p>
@@ -184,7 +189,7 @@ const quickLinks = ref([
             <p class="text-[16px] mt-[20px]">0123456789</p>
           </div>
         </div>
-        <div>
+        <div class="mx-[20px] md:flex md:justify-center">
           <div class="text-white mb-[10px]">
             <p class="text-[24px] font-bold">Account</p>
             <div class="flex flex-col">
@@ -192,7 +197,7 @@ const quickLinks = ref([
             </div>
           </div>
         </div>
-        <div>
+        <div class="mx-[20px] md:flex md:justify-center">
           <div class="text-white mb-[10px]">
             <p class="text-[24px] font-bold">Quick Link</p>
             <div class="flex flex-col">

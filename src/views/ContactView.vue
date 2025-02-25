@@ -7,7 +7,37 @@
               <p class="text-[14px]">Contact</p>
           </div>    
       </div>
-      <div class="grid grid-cols-4 gap-[30px] mb-[80px]">
+      <div class="grid grid-cols-1 sm:max-xl:grid-cols-3 xl:grid-cols-4 gap-[30px] mb-[80px]">
+        <div class="max-sm:flex sm:max-xl:col-span-2 xl:col-span-3 px-[30px] py-[40px] shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-[4px] hidden flex-col">
+          <div class="grid grid-cols-3 gap-[16px] mb-[32px]">
+            <div>
+              <el-input class="h-[50px] rounded-[4px]" v-model="form.first_name" placeholder="Your Name *"></el-input>
+            </div>
+            <div>
+              <el-input class="h-[50px] rounded-[4px]" v-model="form.mail" placeholder="Your Email *"></el-input>
+            </div>
+            <div>
+              <el-input class="h-[50px] rounded-[4px]" v-model="form.phone" placeholder="Your Phone *"></el-input>
+            </div>
+          </div>
+          <div class="h-full">
+            <el-input
+              v-model="textarea"
+              class="w-full"
+              :rows="8"
+              type="textarea"
+              placeholder="Your Massage"
+              resize="none"
+            />
+          </div>
+          <div class="flex justify-end mt-[32px]">
+            <button class="">
+              <div class="py-[16px] px-[48px] flex justify-center items-center bg-[#DB4444] rounded-[4px] cursor-pointer"> 
+                <p class="text-[16px] text-white font-medium">Send Massage</p>
+              </div>
+            </button>
+          </div>
+        </div>
         <div class="px-[35px] py-[40px] shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-[4px]">
           <div>
             <div class="flex items-center mb-[24px]">
@@ -28,7 +58,7 @@
             <p class="text-[14px]">Emails: support@exclusive.com</p>
           </div>
         </div>
-        <div class="col-span-3 px-[30px] py-[40px] shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-[4px] flex flex-col">
+        <div class="max-sm:hidden sm:max-xl:col-span-2 xl:col-span-3 px-[30px] py-[40px] shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-[4px] flex flex-col">
           <div class="grid grid-cols-3 gap-[16px] mb-[32px]">
             <div>
               <el-input class="h-[50px] rounded-[4px]" v-model="form.first_name" placeholder="Your Name *"></el-input>

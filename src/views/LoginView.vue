@@ -14,10 +14,10 @@ const input3 = ref()
 <template>
     <UserLayout>
         <div class="flex my-[60px]">
-            <div class="w-[50%]">
+            <div class="max-lg:hidden block w-[50%] ">
                 <img src="/src/assets/svg/background.svg" alt="">
             </div>
-            <div class="w-[50%] flex justify-center items-center">
+            <div class="w-[50%] max-lg:w-full flex justify-center items-center">
                 <div>
                     <div class="mb-[48px]">
                         <p class="text-[36px] font-medium">Log in to Exclusive</p>
