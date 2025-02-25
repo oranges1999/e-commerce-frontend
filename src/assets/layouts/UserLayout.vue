@@ -6,6 +6,7 @@ import { ElNotification } from 'element-plus'
 const props=defineProps(['login'])
 if(props.login && props.login == 'true'){
   ElNotification({
+    duration:2000,
     title: 'Login success',
     message: h('i', { style: 'color: teal' }, 'You have logged in successfully'),
   })
@@ -36,19 +37,15 @@ const footerLinks = ref([
   },
   {
     title: 'Login / Register',
-    link:'/',
+    link:'/login',
   },
   {
     title: 'Cart',
-    link:'/',
+    link:'/cart',
   },
   {
     title: 'Wishlist',
-    link:'/',
-  },
-  {
-    title: 'Shop',
-    link:'/',
+    link:'/wishlist',
   },
 ])
 
@@ -86,7 +83,7 @@ const quickLinks = ref([
         <h1 class="text-[24px] font-bold cursor-pointer">Exclusive</h1>
       </RouterLink>
 
-      <div class="w-[367px] flex justify-between my-[20px] sm:my-[0px]">
+      <div class="w-[367px] flex justify-around my-[20px] sm:my-[0px]">
         <template v-for="link, index in navLinks">
             <router-link v-if="!(link.title == 'Sign up' && login == 'true')" :to="link.link">{{ link.title }}</router-link>
         </template>
@@ -110,7 +107,7 @@ const quickLinks = ref([
             </div>
         </div>
         <template v-if="login && login == 'true'">
-          <el-dropdown class="ml-[16px]" placement="bottom-end">
+          <el-dropdown class="ml-[16px]" placement="bottom-end" trigger="click">
             <img style="width: 32px !important; max-width: fit-content;" class="cursor-pointer el-dropdown-link" src="/src/assets/svg/profile.svg" alt="">
             <template #dropdown>
               <el-dropdown-menu class="!bg-[#F6F6F6]">

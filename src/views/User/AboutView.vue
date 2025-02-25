@@ -75,18 +75,18 @@
     <div class="grid grid-cols-3 mb-[80px]">
       <div class="flex flex-col justify-center items-center">
         <img class="mb-[24px]" src="/src/assets/svg/delivery.svg" alt="">
-        <p class="font-bold text-[20px]">FREE AND FAST DELIVERY</p>
-        <p class="mt-[8px] text-[14px]">Free delivery for all orders over $140</p>
+        <p class="font-bold text-[20px] text-center">FREE AND FAST DELIVERY</p>
+        <p class="mt-[8px] text-[14px] text-center">Free delivery for all orders over $140</p>
       </div>
       <div class="flex flex-col justify-center items-center">
         <img class="mb-[24px]" src="/src/assets/svg/customer-service.svg" alt="">
-        <p class="font-bold text-[20px]">24/7 CUSTOMER SERVICE</p>
-        <p class="mt-[8px] text-[14px]">Friendly 24/7 customer support</p>
+        <p class="font-bold text-[20px] text-center">24/7 CUSTOMER SERVICE</p>
+        <p class="mt-[8px] text-[14px] text-center">Friendly 24/7 customer support</p>
       </div>
       <div class="flex flex-col justify-center items-center">
         <img class="mb-[24px]" src="/src/assets/svg/after-service.svg" alt="">
-        <p class="font-bold text-[20px]">MONEY BACK GUARANTEE</p>
-        <p class="mt-[8px] text-[14px]">We return money within 30 days</p>
+        <p class="font-bold text-[20px] text-center">MONEY BACK GUARANTEE</p>
+        <p class="mt-[8px] text-[14px] text-center">We return money within 30 days</p>
       </div>
     </div>
   </UserLayout>

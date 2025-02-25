@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/User/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // User
     {
       path: '/',
       name: 'home',
@@ -12,59 +13,55 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      component: () => import('../views/User/AboutView.vue'),
     },
     {
       path: '/signup',
       name: 'signup',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/SignUpView.vue'),
+      component: () => import('../views/User/SignUpView.vue'),
     },
     {
       path: '/login',
       name: 'login',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/LoginView.vue'),
+      component: () => import('../views/User/LoginView.vue'),
     },
     {
       path: '/profile',
       name: 'profile',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ProfileView.vue'),
+      component: () => import('../views/User/ProfileView.vue'),
     },
     {
       path: '/contact',
       name: 'contact',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ContactView.vue'),
+      component: () => import('../views/User/ContactView.vue'),
     },
     {
       path: '/product',
       name: 'product',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ProductView.vue'),
+      component: () => import('../views/User/ProductView.vue'),
     },
+    // End User
+
+    // Admin
+    {
+      path: '/admin/login',
+      name: 'admin.login',
+      component: () => import('../views/Admin/LoginView.vue'),
+    },
+    {
+      path: '/admin/dashboard',
+      name: 'admin.dashboard',
+      component: () => import('../views/Admin/Dashboard.vue'),
+    },
+    // End Admin
+
+    // 404
     {
       path: "/:pathMatch(.*)*",
       name: 'notFound',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/404View.vue'),
+      component: () => import('../views/User/404View.vue'),
     },
+    // End 404
   ],
 })
 
