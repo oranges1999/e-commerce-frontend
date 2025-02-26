@@ -8,7 +8,7 @@
                     </div>
                     <div>
                         <template v-for="link, index in asideLink" :key="index">
-                            <RouterLink to="/admin/dashboard" class="flex items-center p-[18px] mx-[24px] my-[8px] rounded-[8px]" :class="{'bg-[#003F62] text-white': link.is_selected}">
+                            <RouterLink :to="link.link" class="flex items-center p-[18px] mx-[24px] my-[8px] rounded-[8px]" :class="{'bg-[#003F62] text-white': link.is_selected}">
                                 <img class="w-[16px] h-[16px]" :src="link.is_selected?link.icon:link.icon_black" alt="">
                                 <p class="ml-[8px] text-[14px]">{{ link.title }}</p>
                             </RouterLink>
@@ -40,8 +40,8 @@
                             </div>
                         </div>
                     </el-header>
-                    <el-main >
-                        <div class="h-full w-full">
+                    <el-main class="custom-h">
+                        <div>
                             <slot/>
                         </div>
                     </el-main>
@@ -57,31 +57,34 @@ import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue'
 
 const props=defineProps(['link_selected'])
 
-console.log(props.link_selected)
 const asideLink = ref([
     {
         title:'DASHBOARD',
         icon: '/src/assets/svg/dashboard.svg',
         icon_black: '/src/assets/svg/dashboard-black.svg',
-        is_selected: false
+        is_selected: false,
+        link:'/admin/dashboard'
     },
     {
         title:'ALL PRODUCTS',
         icon: '/src/assets/svg/all-product.svg',
         icon_black: '/src/assets/svg/all-product-black.svg',
-        is_selected: false
+        is_selected: false,
+        link:'/admin/all-products'
     },
     {
         title:'ORDER LIST',
         icon: '/src/assets/svg/order-list.svg',
         icon_black: '/src/assets/svg/order-list-black.svg',
-        is_selected: false
+        is_selected: false,
+        link:'/admin/dashboard'
     },
     {
         title:'USER ACCOUNT',
         icon: '/src/assets/svg/profile-black.svg',
         icon_black: '/src/assets/svg/profile.svg',
-        is_selected: false
+        is_selected: false,
+        link:'/admin/dashboard'
     },
 ])
 
@@ -135,5 +138,9 @@ if(props.category_selected && props.category_selected.id != null){
 
 ::v-deep(.el-main){
     background-color: #e7e7e3;
+}
+
+.custom-h{
+    height: calc(1dvh - 96px);
 }
 </style>

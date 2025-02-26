@@ -163,8 +163,6 @@ onUnmounted(() => {
 });
 
 const slide = (direction) => {
-  console.log(window.innerWidth)
-  console.log(direction, currentSlide.value, flashSale.value.length - itemsToShow.value)
   if (direction === 'next' && currentSlide.value < flashSale.value.length - itemsToShow.value) {
     currentSlide.value++
   } else if (direction === 'prev' && currentSlide.value > 0) {
@@ -175,6 +173,7 @@ const slide = (direction) => {
 
 <template>
   <UserLayout :param="queryParams">
+    
     <!-- Category & Carousel -->
     <div>
       <div class="relative flex justify-between w-full mb-[80px]">

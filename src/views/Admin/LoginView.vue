@@ -1,9 +1,9 @@
 <template>
     <div class="w-screen h-screen flex mx-auto max-w-[1280px]">
-        <div class="w-[50%]">
+        <div class="lg:block hidden lg:w-[50%]">
             <img class="h-full object-cover" src="/src/assets/images/MATTIEN.jpg" alt="">
         </div>
-        <div class="w-[50%] flex justify-center items-center">
+        <div class="lg:w-[50%] w-full h-full flex justify-center items-center">
             <div class="w-full flex justify-center items-center">
                 <div>
                     <div class="mb-[48px]">
@@ -12,10 +12,10 @@
                     </div>
                     <div class="flex flex-col justify-between">
                         <div class="border-2 border-black px-[16px] py-[14.5px] rounded-[14px] mb-[14px]">
-                            <el-input v-model="input2" style="width: 370px; height: 32px;" placeholder="Email" /> 
+                            <el-input v-model="input2" style="height: 32px;" placeholder="Email" /> 
                         </div>
                         <div class="border-2 border-black px-[16px] py-[14.5px] rounded-[14px] mb-[14px]">
-                            <el-input v-model="input3" style="width: 370px; height: 32px;" placeholder="Password" show-password/>
+                            <el-input v-model="input3" style="height: 32px;" placeholder="Password" show-password/>
                         </div>
                     </div>
                     <div class="flex items-center justify-between">

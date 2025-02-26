@@ -40,6 +40,30 @@ const router = createRouter({
       name: 'product',
       component: () => import('../views/User/ProductView.vue'),
     },
+    {
+      path: '/wishlist',
+      name: 'wishlist',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/User/WishListView.vue'),
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/User/CartView.vue'),
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/User/CheckoutView.vue'),
+    },
     // End User
 
     // Admin
@@ -53,6 +77,16 @@ const router = createRouter({
       name: 'admin.dashboard',
       component: () => import('../views/Admin/Dashboard.vue'),
     },
+    {
+      path: '/admin/all-products',
+      name: 'admin.products',
+      component: () => import('../views/Admin/Products/Index.vue'),
+    },
+    {
+      path: '/admin/all-products/create',
+      name: 'admin.products.create',
+      component: () => import('../views/Admin/Products/Create.vue'),
+    },
     // End Admin
 
     // 404
@@ -60,30 +94,6 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       name: 'notFound',
       component: () => import('../views/User/404View.vue'),
-    },
-    {
-      path: '/wishlist',
-      name: 'wishlist',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/WishListView.vue'),
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/CartView.vue'),
-    },
-    {
-      path: '/checkout',
-      name: 'checkout',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/CheckoutView.vue'),
     },
   ],
 })
