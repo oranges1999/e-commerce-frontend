@@ -3,12 +3,20 @@ import { RouterLink, RouterView } from 'vue-router'
 import { h, ref } from 'vue'
 import { ElNotification } from 'element-plus'
 
-const props=defineProps(['login'])
-if(props.login && props.login == 'true'){
+const props=defineProps(['param'])
+if(props.param?.login && props.param?.login == 'true'){
   ElNotification({
     duration:2000,
     title: 'Login success',
     message: h('i', { style: 'color: teal' }, 'You have logged in successfully'),
+  })
+}
+
+if(props.param?.order && props.param?.order == 'true'){
+  ElNotification({
+    duration:2000,
+    title: 'Order have been placed',
+    message: h('i', { style: 'color: teal' }, 'Your order have been placed successfully'),
   })
 }
 const navLinks = ref([
@@ -72,20 +80,20 @@ const quickLinks = ref([
 <template>
   <header class="border-b-2 border-[#d3d3d3]">
     <div class="h-[48px] flex justify-center items-center bg-black">
-      <p class="text-[14px] text-white">
+      <p class="text-[14px] text-white text-center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. <a class="underline !font-bold" href="">ShopNow</a>
       </p>
     </div>
   </header>
 
-  <div class="container sm:py-[40px] mx-auto w-full max-w-[1280px] flex flex-col justify-between items-center sm:flex-row">
+  <div class="container sm:py-[40px] mx-auto w-full max-w-[1280px] flex flex-col justify-between items-center sm:flex-row px-[10px]">
       <RouterLink to="/">
         <h1 class="text-[24px] font-bold cursor-pointer">Exclusive</h1>
       </RouterLink>
 
       <div class="w-[367px] flex justify-around my-[20px] sm:my-[0px]">
         <template v-for="link, index in navLinks">
-            <router-link v-if="!(link.title == 'Sign up' && login == 'true')" :to="link.link">{{ link.title }}</router-link>
+            <router-link v-if="!(link.title == 'Sign up' && param?.login == 'true')" :to="link.link">{{ link.title }}</router-link>
         </template>
       </div>
 
@@ -96,17 +104,17 @@ const quickLinks = ref([
         </div>
         <RouterLink class="flex relative mx-[16px]" to="/wishlist">
             <img class="cursor-pointer" style="max-width: fit-content; width: 32px !important;" src="/src/assets/svg/heart.svg" alt="">
-            <div v-if="login && login == 'true'" class="absolute right-[-5px] w-[16px] h-[16px] bg-[#db4444] flex justify-center items-center rounded-[50%]">
+            <div v-if="param?.login && param?.login == 'true'" class="absolute right-[-5px] w-[16px] h-[16px] bg-[#db4444] flex justify-center items-center rounded-[50%]">
                 <p class="text-[white] text-[12px] font-bold">4</p>
             </div>
         </RouterLink>
         <RouterLink class="flex relative" to="/cart"> 
             <img class=" cursor-pointer" style="max-width: fit-content; width: 32px !important;" src="/src/assets/svg/cart.svg" alt="">
-            <div v-if="login && login == 'true'" class="absolute right-[-5px] w-[16px] h-[16px] bg-[#db4444] flex justify-center items-center rounded-[50%]">
+            <div v-if="param?.login && param?.login == 'true'" class="absolute right-[-5px] w-[16px] h-[16px] bg-[#db4444] flex justify-center items-center rounded-[50%]">
                 <p class="text-[white] text-[12px] font-bold">4</p>
             </div>
         </RouterLink>
-        <template v-if="login && login == 'true'">
+        <template v-if="param?.login && param?.login == 'true'">
           <el-dropdown class="ml-[16px]" placement="bottom-end" trigger="click">
             <img style="width: 32px !important; max-width: fit-content;" class="cursor-pointer el-dropdown-link" src="/src/assets/svg/profile.svg" alt="">
             <template #dropdown>

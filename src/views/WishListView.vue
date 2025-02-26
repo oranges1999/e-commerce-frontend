@@ -59,9 +59,9 @@ const flashSale = ref([
                     <p>Move All To Bag</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center mt-[40px]">
                 <div 
-                class="flex flex-wrap"
+                class="flex flex-wrap max-[960px]:justify-center"
                 :style="{ transform: `translateX(-${currentSlide * (100 / itemsToShow)}%)` }"
                 >
                 <div 
@@ -120,9 +120,9 @@ const flashSale = ref([
                     <p>See All</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center mt-[40px]">
                 <div 
-                class="flex flex-wrap"
+                class="flex flex-wrap max-[960px]:justify-center"
                 :style="{ transform: `translateX(-${currentSlide * (100 / itemsToShow)}%)` }"
                 >
                 <div 
@@ -168,7 +168,7 @@ const flashSale = ref([
                     </div>
                     </RouterLink>
                 </div>
-                </div>  
+                </div>
             </div>
         </div>
     </UserLayout>

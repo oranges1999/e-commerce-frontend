@@ -174,7 +174,7 @@ const slide = (direction) => {
 </script>
 
 <template>
-  <UserLayout :login="queryParams.login">
+  <UserLayout :param="queryParams">
     <!-- Category & Carousel -->
     <div>
       <div class="relative flex justify-between w-full mb-[80px]">
