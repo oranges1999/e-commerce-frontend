@@ -1,5 +1,5 @@
 <template>
-    <AdminLayout :link_selected="linkSelected">
+    <AdminLayout :data="linkSelected">
         <p class="font-bold text-[24px]">Dashboard</p>
         <div class="flex justify-between items-center mb-[24px]">
             <p class="font-bold text-[16px]">Home > Dashboard</p>

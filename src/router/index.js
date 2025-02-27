@@ -87,6 +87,21 @@ const router = createRouter({
       name: 'admin.products.create',
       component: () => import('../views/Admin/Products/Create.vue'),
     },
+    {
+      path: '/admin/all-products/edit',
+      name: 'admin.products.edit',
+      component: () => import('../views/Admin/Products/Update.vue'),
+    },
+    {
+      path: '/admin/orders',
+      name: 'admin.orders.index',
+      component: () => import('../views/Admin/Orders/Index.vue'),
+    },
+    {
+      path: '/admin/orders/show',
+      name: 'admin.orders.show',
+      component: () => import('../views/Admin/Orders/Show.vue'),
+    },
     // End Admin
 
     // 404

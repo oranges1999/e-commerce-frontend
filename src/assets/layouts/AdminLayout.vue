@@ -52,10 +52,34 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
-import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue'
+import {h, ref} from 'vue'
+import { ElNotification } from 'element-plus'
 
-const props=defineProps(['link_selected'])
+const props=defineProps(['data' , 'params'])
+
+if(props.params?.product_created && props.params?.product_created == 'true'){
+  ElNotification({
+    duration:2000,
+    title: 'Product have been created',
+    message: h('i', { style: 'color: teal' }, 'You have successfully created a product'),
+  })
+}
+
+if(props.params?.deleted && props.params?.deleted == 'true'){
+  ElNotification({
+    duration:2000,
+    title: 'Product have been deleted',
+    message: h('i', { style: 'color: teal' }, 'You have successfully deleted a product'),
+  })
+}
+
+if(props.params?.updated && props.params?.updated == 'true'){
+  ElNotification({
+    duration:2000,
+    title: 'Product have been updated',
+    message: h('i', { style: 'color: teal' }, 'You have successfully updated a product'),
+  })
+}
 
 const asideLink = ref([
     {
@@ -77,7 +101,7 @@ const asideLink = ref([
         icon: '/src/assets/svg/order-list.svg',
         icon_black: '/src/assets/svg/order-list-black.svg',
         is_selected: false,
-        link:'/admin/dashboard'
+        link:'/admin/orders'
     },
     {
         title:'USER ACCOUNT',
@@ -88,8 +112,8 @@ const asideLink = ref([
     },
 ])
 
-if(props.link_selected && props.link_selected.id != null){
-    asideLink.value[props.link_selected.id].is_selected = true
+if(props.data && props.data.id != null){
+    asideLink.value[props.data.id].is_selected = true
 }
 
 const categories = ref([

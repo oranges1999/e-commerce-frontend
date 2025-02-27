@@ -130,9 +130,11 @@
                 </div>
             </div>
             <div class="row-span-2 h-[48px] flex justify-end mt-[40px]">
-                <RouterLink to="/admin/all-products?product_created=true" class="bg-[#003F62] rounded-[16px] cursor-pointer w-[220px] h-[48px] flex justify-center items-center"><p class="text-[white]">CREATE</p></RouterLink>
+                <RouterLink to="/admin/all-products?deleted=true" class=" border-2 rounded-[16px] bg-black cursor-pointer w-[141px] h-[48px] flex justify-center items-center"><p class="text-[white]">DELETE</p></RouterLink>
                 <div class="w-[10px]"></div>
-                <RouterLink to="/admin/all-products" class=" border-2 rounded-[16px] bg-white cursor-pointer w-[220px] h-[48px] flex justify-center items-center"><p>CANCEL</p></RouterLink>
+                <RouterLink to="/admin/all-products?updated=true" class="bg-[#003F62] rounded-[16px] cursor-pointer w-[141px] h-[48px] flex justify-center items-center"><p class="text-[white]">UPDATE</p></RouterLink>
+                <div class="w-[10px]"></div>
+                <RouterLink to="/admin/all-products" class=" border-2 rounded-[16px] bg-white cursor-pointer w-[141px] h-[48px] flex justify-center items-center"><p>CANCEL</p></RouterLink>
             </div>
         </div>
     </AdminLayout>
@@ -140,7 +142,9 @@
 
 <script setup>
 import AdminLayout from '@/assets/layouts/AdminLayout.vue';
-import {onBeforeUnmount, ref} from 'vue'
+import {onBeforeUnmount, onMounted, ref, watch} from 'vue'
+import { ElMessage } from 'element-plus'
+import { Plus } from '@element-plus/icons-vue'
 
 const format = (percentage) => (percentage === 100 ? '' : '')
 const linkSelected = {
@@ -156,7 +160,7 @@ const {
     input6,
     input7,
     textarea,
-    } = ref()
+    } = ref('lorem ipsum')
 const value1 = ref([])
 const options = [
   {
@@ -181,7 +185,7 @@ const options = [
   },
 ]
 
-const profileImageUrl = ref('');
+const profileImageUrl = ref('/src/assets/images/fryer/fryer4.webp');
 const fileUploadRef = ref(null);
 const fileMultiUploadRef = ref(null)
 
@@ -209,7 +213,20 @@ const removeImage = () => {
 }
 
 const dragActive = ref(false);
-const imageUrls = ref([]);
+const imageUrls = ref([
+    {
+        url: '/src/assets/images/fryer/fryer3.jpeg',
+        name: 'Lorem Ipsum'
+    },
+    {
+        url: '/src/assets/images/fryer/fryer3.jpeg',
+        name: 'Lorem Ipsum'
+    },
+    {
+        url: '/src/assets/images/fryer/fryer3.jpeg',
+        name: 'Lorem Ipsum'
+    },
+]);
 
 const handleDrop = (event) => {
     progress.value = 0
@@ -231,24 +248,24 @@ const handleDrop = (event) => {
 
 const createImageUrls = (files) => {
     console.log(files)
-  const imageFiles = Array.from(files).filter(file => file.type.startsWith('image/'));
-  imageFiles.forEach(file => {
-    console.log(file)
-    const url = URL.createObjectURL(file);
-    imageUrls.value.push(
-        {
-            url: url,
-            name:file.name
-        }
-    );
-  });
+    const imageFiles = Array.from(files).filter(file => file.type.startsWith('image/'));
+    imageFiles.forEach(file => {
+        console.log(file)
+        const url = URL.createObjectURL(file);
+        imageUrls.value.push(
+            {
+                url: url,
+                name:file.name
+            }
+        );
+    });
 };
 
 onBeforeUnmount(() => {
   imageUrls.value.forEach(url => URL.revokeObjectURL(url));
 });
 
-const progress = ref(0)
+const progress = ref(100)
 
 const inscreaseProgress = () => {
     if(progress.value == 100){

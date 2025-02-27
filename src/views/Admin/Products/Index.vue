@@ -1,5 +1,5 @@
 <template>
-    <AdminLayout :link_selected="linkSelected">
+    <AdminLayout :data="linkSelected" :params="queryParams">
         <div class="flex justify-between items-center">
             <p>Home > All Products</p>
             <RouterLink to="/admin/all-products/create" class=" flex px-[26px] py-[16px] bg-[#232321] rounded-[8px]">
@@ -31,6 +31,11 @@
                         <p>đ{{ scope.row.price }}</p>
                     </template>
                 </el-table-column>
+                <el-table-column fixed="right" label="">
+                    <template #default>
+                       <RouterLink to="/admin/all-products/edit">Edit</RouterLink>
+                    </template>
+                </el-table-column>
             </el-table>
         </div>
     </AdminLayout>
@@ -39,10 +44,14 @@
 <script setup>
 import AdminLayout from '@/assets/layouts/AdminLayout.vue';
 import {ref} from 'vue'
+import { useRoute } from 'vue-router';
 
 const linkSelected = {
     id: 1,
 }
+
+const route = useRoute();
+const queryParams = route.query;
 
 const orders = ref([])
 const renderOrder = () => {

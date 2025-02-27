@@ -1,6 +1,6 @@
 <script setup>
 import UserLayout from '@/assets/layouts/UserLayout.vue';
-import {  h, ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router';
 
 function scrollToTop() {
