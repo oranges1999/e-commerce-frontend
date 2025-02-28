@@ -102,6 +102,16 @@ const router = createRouter({
       name: 'admin.orders.show',
       component: () => import('../views/Admin/Orders/Show.vue'),
     },
+    {
+      path: '/admin/users',
+      name: 'admin.users.index',
+      component: () => import('../views/Admin/Users/Index.vue'),
+    },
+    {
+      path: '/admin/users/show',
+      name: 'admin.users.show',
+      component: () => import('../views/Admin/Users/Show.vue'),
+    },
     // End Admin
 
     // 404

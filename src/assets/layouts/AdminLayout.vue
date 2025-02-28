@@ -108,7 +108,7 @@ const asideLink = ref([
         icon: '/src/assets/svg/profile-black.svg',
         icon_black: '/src/assets/svg/profile.svg',
         is_selected: false,
-        link:'/admin/dashboard'
+        link:'/admin/users'
     },
 ])
 
