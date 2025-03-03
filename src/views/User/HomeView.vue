@@ -426,8 +426,8 @@ const slide = (direction) => {
       </div>
       <div class="">
         <p class="text-[36px] font-bold">Browse By Category</p>
-        <div class="flex max-lg:flex-wrap justify-between my-[60px]">
-          <RouterLink v-for="link in category" class="max-lg:w-[135px] m-[20px] group w-[170px] h-[145px] rounded-[4px] flex justify-center items-center border-2 border-[#d3d3d3] hover:border-0 hover:bg-[#DB4444]" :to="link.link" >
+        <div class="grid max-sm:grid-cols-1 min-sm:grid-cols-2 min-m:grid-cols-3 min-lg:grid-cols-4 min-xl:grid-cols-7 my-[60px] gap-[40px]">
+          <RouterLink v-for="link in category" class="group h-[145px] rounded-[4px] flex justify-center items-center border-2 border-[#d3d3d3] hover:border-0 hover:bg-[#DB4444]" :to="link.link" >
             <div class="flex flex-col items-center">
               <img :src="link.icon" alt="" class="block group-hover:!hidden w-[56px] aspect-square">
               <img :src="link.icon_white" alt="" class="hidden group-hover:!block w-[56px] aspect-square">
