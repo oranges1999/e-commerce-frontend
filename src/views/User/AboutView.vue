@@ -44,11 +44,11 @@
       </div>
     </div>
     <div class="mb-[80px]">
-      <el-carousel type="card" :direction="lessThan1280?'vertical':'horizontal'">
+      <el-carousel indicator-position="none" type="card" :direction="lessThan1280?'vertical':'horizontal'">
         <el-carousel-item v-for="employee, index in employees" :key="index">
           <div class="rounded-[14px] bg-white h-full flex">
             <img class="h-full rounded-[14px]" :src="employee.image" alt="">
-            <div class="ml-[20px]">
+            <div class="ml-[10px]">
               <p class="text-[32px] font-medium">{{ employee.name }}</p>
               <p class="text-[16px] mb-[10px]">{{ employee.position }}</p>
               <div class="flex gap-3" >
@@ -56,7 +56,7 @@
                 <img src="/src/assets/svg/instagram.svg" alt="">
                 <img src="/src/assets/svg/linkedin.svg" alt="">
               </div>
-              <div class="flex mt-[20px] w-full">
+              <div class="flex mt-[20px]">
                 <div class="w-[24px]">
                   <img class="min-w-[24px] h-[24px]" src="/src/assets/svg/quote-left-svgrepo-com.svg" alt="">
                 </div>

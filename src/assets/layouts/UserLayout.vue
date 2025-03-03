@@ -97,10 +97,10 @@ const quickLinks = ref([
         </template>
       </div>
 
-      <div class="flex w-[347px]">
-        <div class="relative bg-[#F5F5F5] rounded-[4px] w-[283px] flex justify-center">
+      <div class="flex">
+        <div class="relative bg-[#F5F5F5] rounded-[4px] px-[20px] flex justify-center">
           <input class="w-[211px] h-[38px] " type="text" placeholder="What are you looking for?">
-          <img class="absolute right-[20px] top-[10px] cursor-pointer" src="/src/assets/svg/magnifying-glass.svg" alt="">
+          <img class="absolute right-[10px] top-[10px] cursor-pointer" src="/src/assets/svg/magnifying-glass.svg" alt="">
         </div>
         <RouterLink class="flex relative mx-[16px]" to="/wishlist">
             <img class="cursor-pointer" style="max-width: fit-content; width: 32px !important;" src="/src/assets/svg/heart.svg" alt="">

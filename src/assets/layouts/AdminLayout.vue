@@ -2,7 +2,7 @@
     <div class="mx-auto w-full max-w-[1280px]">
         <div class="common-layout">
             <el-container>
-                <el-aside width="260px" class="h-screen">
+                <el-aside width="260px" class="h-screen border-r-2 border-[#232321]/20 border-op">
                     <div class="h-[96px] flex justify-center items-center">
                         <p class="text-[36px] font-bold">Exclusive</p>
                     </div>
@@ -33,7 +33,7 @@
                     </div>
                 </el-aside>
                 <el-container>
-                    <el-header height="96px">
+                    <el-header height="96px" class="border-b-2 border-[#232321]/20">
                         <div class="flex justify-end mx-[40px] my-[28px]">
                             <div class="py-[11.5px] px-[16px] border-2 rounded-[14px]">
                                 <p class="text-[14px] font-medium">ADMIN</p>
@@ -41,9 +41,7 @@
                         </div>
                     </el-header>
                     <el-main class="custom-h">
-                        <div>
-                            <slot/>
-                        </div>
+                        <slot></slot>
                     </el-main>
                 </el-container>
             </el-container>

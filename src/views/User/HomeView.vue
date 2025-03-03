@@ -36,10 +36,22 @@ const category = ref([
     icon_white:'/src/assets/svg/heater_white.svg'
   },
   {
-    title: 'Hyrdroelectric tank',
+    title: 'Thermal pot',
     link:'',
     icon:'/src/assets/svg/hydroelectric-tank.svg',
     icon_white:'/src/assets/svg/hydroelectric-tank_white.svg'
+  },
+  {
+    title: 'Vacuum cleaner',
+    link:'',
+    icon:'/src/assets/svg/vacuum.svg',
+    icon_white:'/src/assets/svg/vacuum-white.svg'
+  },
+  {
+    title: 'Air purifier',
+    link:'',
+    icon:'src/assets/svg/air-filter.svg',
+    icon_white:'src/assets/svg/air-filter-white.svg'
   },
 ])
 
@@ -356,7 +368,7 @@ const slide = (direction) => {
                 <div>
                   <div class=" relative w-[304px] h-[304px] z-[0]">
                     <div class="absolute top-0 left-0 z-[10] m-[10px] w-[55px] h-[26px] bg-[#DB4444] rounded-[4px] flex justify-center items-center">
-                      <p class="text-[12px] text-[white]">-{{ product.discount }}</p>
+                      <p class="text-[12px] text-[white]">-{{ product.discount }}%</p>
                     </div>
                     <div class="absolute top-0 right-0 z-[20] m-[10px]">
                       <div class="bg-[white] rounded-[50%] cursor-pointer mb-[10px]">
@@ -415,11 +427,11 @@ const slide = (direction) => {
       <div class="">
         <p class="text-[36px] font-bold">Browse By Category</p>
         <div class="flex max-lg:flex-wrap justify-between my-[60px]">
-          <RouterLink v-for="link in category" class="max-lg:w-[135px] m-[20px] group  w-[170px] h-[145px] rounded-[4px] flex justify-center items-center border-2 border-[#d3d3d3] hover:border-0 hover:bg-[#DB4444]" :to="link.link" >
+          <RouterLink v-for="link in category" class="max-lg:w-[135px] m-[20px] group w-[170px] h-[145px] rounded-[4px] flex justify-center items-center border-2 border-[#d3d3d3] hover:border-0 hover:bg-[#DB4444]" :to="link.link" >
             <div class="flex flex-col items-center">
               <img :src="link.icon" alt="" class="block group-hover:!hidden w-[56px] aspect-square">
               <img :src="link.icon_white" alt="" class="hidden group-hover:!block w-[56px] aspect-square">
-              <p class="text-black group-hover:text-white">{{ link.title }}</p>
+              <p class="text-black group-hover:text-white text-[16px]">{{ link.title }}</p>
             </div>
           </RouterLink>
         </div>
